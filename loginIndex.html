@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset= "UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Login Taid</title>
+  <link rel="icon" type="image/svg+xml" href="https://files.catbox.moe/6a5pm3.svg" />
+  <!-- <link rel="stylesheet" href="/storage/emulated/0/LoginTaid.css">-->
+</head>
+<style>
+
+body {/*
+ background-image: url('/storage/emulated/0/Pictures/Telegram/IMG_20250408_084720_474.jpg');
+ */ background-repeat: no-repeat;
+  background-color: #20B2AA;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+ /* object-fit: cover;*/
+}
+
+#mainBox {
+  width: 90%;
+  height: 350px;
+  background-color: rgba(0, 255, 255, 0.5);
+  border-radius: 20px;
+  margin: 20px;
+  margin-top: 55%;
+  box-shadow: 0 20px 33px rgba(0, 255, 255, 0.8);
+}
+
+#heading {
+  background-color: rgba(127, 255, 212, 0.5);
+  margin-left: 25%;
+  text-align: center;
+  width: 340px;
+  height: 60px;
+  font-size: 3em;
+  font-weight: bolder;
+  border-bottom:  3px solid black;
+  border-top: 5px solid black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#inputName {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border-color: blueviolet;
+  border-width: 5px;
+  font-size: 1.3em;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: input 2s infinite;
+}
+
+/*#inputName:out-of-range {
+  background-color: red;
+}*/
+
+#lblname {
+  font-size: 1.5em;
+  color: #000000;
+}
+
+#lblEmail {
+  font-size: 1.5em;
+  color: #000000;
+  margin-left: 48px;
+}
+
+#inputEmail {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border-color: blueviolet;
+  border-width: 5px;
+  font-size: 1.3em;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: input 2s infinite;
+}
+
+#next {
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: greenyellow;
+  margin-left: 35%;
+  border: none;
+}
+
+#errors {
+  color: red;
+  font-size-adjust: 0.8em;
+  text-align: center;
+}
+
+#errorEmail {
+  color: red;
+  font-size-adjust: 0.8em;
+  text-align: center;
+}
+
+ @keyframes input {
+   from {
+     border: 1px solid green;
+   }
+   to {
+     border: 1px dotted red;
+   }
+ }
+
+#cont {
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: rgb(173, 255, 47);
+  margin-left: 35%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  animation: glow 2s ease-out 1;
+}
+
+#contMsg {
+  text-align: center;
+  margin-top: 90px;
+  font-size: 2em;
+  margin-left: 50px;
+  font-family: 'Roboto', monospace;
+  color: green;
+}
+
+ @keyframes glow {
+   from {
+     margin-left: 0%;
+     background-color: rgba(173, 255, 47, 0.1);
+     box-shadow: 0 0px 0px rgba(173, 255, 47, 1)
+   }
+   to {
+     margin-left: 35%;
+     box-shadow: 0 10px 23px rgba(173, 255, 47, 0.1);
+     background-color: rgba(173, 255, 47, 1);
+   }
+ }
+
+#msg {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Roboto', monospace;
+}
+
+#aboutBtn {
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: greenyellow;
+  margin-left: 35%;
+  border: none;
+}
+</style>
+<!--<script src="/storage/emulated/0/LoginTaid.js"></script>-->
+<body>
+  <div id="mainBox">
+    <p id="heading">TAID LOGIN</p>
+    <div id="continue">
+    <p>
+      <label id="lblname" for="name">Username: </label>
+      <input id="inputName" placeholder="your name" type="text" required>
+    </p>
+    <div id="errors"></div>
+    <p>
+      <label id="lblEmail" for="email">Email: </label>
+      <input id="inputEmail" placeholder="example@gmail.com" type="email" required>
+    </p>
+    <div id="errorEmail"></div> 
+    <div id="nxt">
+    <button onclick="nextMove()" id="next">Next</button> 
+    </div> 
+    </div>
+    </div>
+    <div id="about" ></div>   
+
+  <hr style="margin-top: 200px;">
+  <div>
+    <p id="msg">Hello and Welcome To Taid Myk J <br><br>
+      <u><span id="buy" onclick="window.location.href=
+        'https://wa.me/254789925270?text=Hello%20Taid%20Myk%20J'" style="color: blue;"></span></u><br><br>
+      <span style="color: purple" onclick =
+        "document.getElementById('buy').innerHTML = '+254789925270';"
+        ><u>Buy me Coffee</u></span>
+    </p>
+    <br>
+  </div>
+  <hr>
+  <script>
+  
+function nextMove() {
+    let userName = document.getElementById('inputName').value;
+  
+    cleanName = userName.trim().toLowerCase().slice(1);
+    cptA = userName.at(0).toUpperCase();
+    fnlNm = `${cptA}${cleanName}`;
+    
+    
+    if (fnlNm.length < 3 || fnlNm.length > 25) {
+ /*       document.getElementById('errors').innerHTML = '';
+        checkEmail();
+    } else {*/
+        document.getElementById('errors').innerHTML = 
+        `<p>Make sure your name has atleast 3 to atmost 25 characters</p>`;
+    }
+    else if (fnlNm.includes('1') || fnlNm.includes('2') || fnlNm.includes('3') ||
+    fnlNm.includes('4') || fnlNm.includes('5') || fnlNm.includes('6') ||
+    fnlNm.includes('7') || fnlNm.includes('8') || fnlNm.includes('9') ||
+    fnlNm.includes('0') || fnlNm.includes('★') || fnlNm.includes('†') ||
+    fnlNm.includes('@') || fnlNm.includes('#') || fnlNm.includes('/') ||
+    fnlNm.includes('.') || fnlNm.includes(',') || fnlNm.includes('Xx') ||
+    fnlNm.includes('xx') || fnlNm.includes('ww') || fnlNm.includes('evil') ||
+    fnlNm.includes('fuck') || fnlNm.includes('taid') || fnlNm.includes('Taid') ||
+    fnlNm.includes('example') || fnlNm.includes('Example') ) {
+        document.getElementById('errors').innerHTML = 
+        `<p>Name not Allowed </p>`;
+    }
+    else {
+        document.getElementById('errors').innerHTML = '';
+        checkEmail();
+      localStorage.setItem('savedName', fnlNm);
+    }
+}
+
+function checkEmail() {
+    let userEmail = document.getElementById('inputEmail').value;
+    clnEmail = userEmail.trim().toLowerCase().endsWith('@gmail.com')
+    if (clnEmail == true && userEmail.trim().length >= 13 &&
+        (userEmail.trim() != 'example@gmail.com') ) {
+        document.getElementById('errorEmail').innerHTML = '';
+        finalMove();
+          localStorage.setItem('savedEmail', clnEmail);
+    } else {
+        document.getElementById('errorEmail').innerHTML = 
+        `<p>Must be a valid Email</p>`;
+    }
+    
+  /*  if (userEmail.length >= 13) {
+      document.getElementById('errorEmail').innerHTML = '';
+      nextMove();  
+    }
+    else {
+        document.getElementById('errorEmail').innerHTML = 
+        `<p>Email should contain a name not values</p>`;
+    }*/
+}      
+
+
+function finalMove() {
+    document.getElementById('continue').innerHTML = 
+    `<p id="contMsg">Logged In Successfully!</p>
+ <button onclick="window.location.href='/storage/emulated/0/creativity.html' " id="cont">Continue</button>`;
+  document.getElementById('about').innerHTML = 
+ `<button onclick="aboutPage()" id="aboutBtn">About</button>`
+}
+
+function aboutPage() {
+ window.location.href = '/storage/emulated/0/aboutTaid.html';
+}
+  </script>
+</body>
+</html>
