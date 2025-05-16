@@ -1,7 +1,7 @@
 <html>
   <body>
     <button
-      onclick="window.location.href = 'https://kym48-kc.github.io/mykTaidLogin/TaiderLogin.html'"
+      onclick="window.location.href = 'https://kym48-kc.github.io/BEEZ/loginIndex.html'"
       style="color: white;
       width: 80%;
       height: 60px;
