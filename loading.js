@@ -44,7 +44,7 @@ let count = function() {
             document.getElementById('b3').style.backgroundColor = 'red';
             document.getElementById('b4').style.backgroundColor = 'red'//'rgba(248,248,255,0.8)';
             document.getElementById('b5').style.backgroundColor = 'red';
-            window.location.href = '/storage/emulated/0/business-taid.html';
+            window.location.href = 'home.html';
             return count();
             //document.getElementById('b1').style.backgroundColor = 'grey';
         }        
