@@ -16,6 +16,6 @@
       border-radius: 20px;
       border: none;
       background-color: green;
-      font-size: 2rem;">Continue</button>
+      font-size: 2rem;">Coming Soon</button>
   </body>
 </html>
